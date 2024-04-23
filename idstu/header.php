@@ -14,8 +14,8 @@
 <body>
 <header>
     <div class="menu">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/menu.svg" alt="Меню">
-        <div class="menu_button">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/menu.svg" alt="Меню" class="burger_icon">
+        <div class="menu_button" onclick="location.href='/';">
             <p class="menu_text">Институт</p>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
         </div>

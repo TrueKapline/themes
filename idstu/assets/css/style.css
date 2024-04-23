@@ -24,6 +24,10 @@ header {
 
 .menu img {
   cursor: pointer;
+  margin-left: 3px;
+}
+
+.burger_icon {
   display: none;
 }
 
@@ -515,7 +519,7 @@ hr {
 }
 
 @media (max-width: 1300px){
-  .menu img {
+  .burger_icon {
     display: initial;
   }
 
@@ -696,7 +700,7 @@ hr {
     padding: 0 30px;
   }
 
-  .menu img {
+  .burger_icon {
     width: 30px;
     height: 76px;
   }

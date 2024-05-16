@@ -38,7 +38,10 @@
     <div class="news">
         <div class="title_news">
             <h1>Новости</h1>
-            <p class="view_all">Посмотреть все</p>
+            <div class="see_all">
+                <p class="view_all">Посмотреть все</p>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg"" alt="">
+            </div>
         </div>
         <hr>
         <div class="grid_wrapper">
@@ -82,100 +85,76 @@
         </div>
     </div>
     <div class="seminars">
-        <div class="news">
-            <div class="title_news">
+        <div class="seminars_wrapper">
+            <div class="title_seminars">
                 <h1>Семинары</h1>
-                <p class="view_all">Посмотреть календарь</p>
-            </div>
-            <hr>
-            <div class="seminars_wrapper">
-                <div class="seminars_slider" id="seminars_slider">
-                    <div class="seminars_menu">
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Пн, 16 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Методы и программные средства создания интеллектуальных систем с декларативными базами знаний на основе модельных трансформаций</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 5 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Погодаев Н.И., Старицын М.В. “Оптимальное управление нелокальным уравнением неразрывности”</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 28 апреля 2022 года</p>
-                                <p class="other_seminars_text_title">Технология создания интеллектуальных систем с декларативными базами знаний на основе модельных трансформаций</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seminars_menu">
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Пн, 16 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 4</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 5 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 5</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 28 апреля 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 6</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seminars_menu">
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Пн, 16 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 7</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 5 мая 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 8</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                        <div class="seminars_other">
-                            <div class="other_seminars_text">
-                                <p class="other_seminars_text_date">Чт, 28 апреля 2022 года</p>
-                                <p class="other_seminars_text_title">Семинар номер 9</p>
-                                <p class="other_seminars_text_further">Читать далее</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="see_all">
+                    <p class="view_all">Календарь</p>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg" alt="">
                 </div>
             </div>
-            <div class="seminars_slider_ellipse" id="seminars_slider_ellipse">
-                <div class="ellipse_1"></div>
-                <div class="ellipse_2"></div>
-                <div class="ellipse_3"></div>
+            <hr>
+            <div class="seminars_slider">
+                <div class="slider_wrapper">
+                <?php 
+                        // параметры по умолчанию
+                        $my_posts = get_posts( array(
+                            'numberposts' => 5,
+                            'category_name' => 'seminars', // Ярлык рубрики
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'include'     => array(),
+                            'exclude'     => array(),
+                            'meta_key'    => '',
+                            'meta_value'  => '',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // Подавление работы фильтров изменения SQL запроса
+                        ) );
+
+                        global $post;
+
+                        foreach( $my_posts as $post ){
+                            setup_postdata( $post );
+                            ?>
+                                <section class="seminars_item">
+                                    <p class="seminars_date"><?php 
+                                        echo wp_date('D', strtotime(get_field('data_provedeniya', false, false))), ', '; // Отображение дня недели
+                                        the_field('data_provedeniya'); // Отображение остальной даты проведения
+                                    ?> года</p>
+                                    <p class="seminars_title"><?php the_title(); ?></p>
+                                    <a class="seminars_link" aria-label="seminars" href="<?php the_permalink(); ?>">Читать далее</a>
+                                </section>
+                            <?php
+                        }
+
+                        wp_reset_postdata(); // сброс
+                        ?>
+                </div>
+
+                <div class="seminars_buttons">
+                    <button class="seminars-slider__btn seminars-slider__btn_prev">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/button_arrow_left_default.svg" alt="Назад">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/button_arrow_left_hover.svg" alt="Назад" class="btn-img__hidden">
+                    </button>
+                    <button class="seminars-slider__btn seminars-slider__btn_next">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/button_arrow_right_default.svg" alt="Вперед">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/button_arrow_right_hover.svg" alt="Вперед" class="btn-img__hidden">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     <div class="publications">
         <div class="title_news">
             <h1>Публикации</h1>
-            <p class="view_all">Посмотреть все</p>
+            <div class="see_all">
+                <p class="view_all">Посмотреть все</p>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg"" alt="">
+            </div>
         </div>
         <hr>
-        <div class="seminars_wrapper">
-            <div class="seminars_slider" id="publications_slider">
+        <div class="slider_wrapper">
+            <div class="general_slider" id="publications_slider">
                 <div class="publications_menu">
                     <div class="publications_other">
                         <div>

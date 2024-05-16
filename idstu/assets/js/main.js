@@ -1,6 +1,6 @@
 title_logo = document.getElementById('title_logo');
 title_logo.addEventListener('click', () => {
-    window.location = 'index.html'
+    window.location = 'index.php'
 });
 about_ins = document.getElementById('about_ins');
 

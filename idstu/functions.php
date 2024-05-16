@@ -2,8 +2,9 @@
 
 // Ассеты для главной страницы
 function idstu_assets() {
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true );
-    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/index.js', array(), '20151215', true );
+    // wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true );
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/index.js', array(), date("h:i:s"), true );
+    wp_enqueue_script( 'slider-script', get_template_directory_uri() . '/assets/js/slider.js', array(), date("h:i:s"), true );
     wp_enqueue_style( 'main-css', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime( get_template_directory() . '/assets/css/style.css' ) );
 }
 add_action( 'wp_enqueue_scripts', 'idstu_assets' );

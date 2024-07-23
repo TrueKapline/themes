@@ -655,7 +655,7 @@ hr {
   display: flex;
   align-items: center;
   width: calc(200px * 16);
-  animation: scroll 10s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .slide {

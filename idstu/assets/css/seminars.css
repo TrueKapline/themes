@@ -1,6 +1,88 @@
+.seminars_info {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.seminars_navigation {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.seminars_navigation a {
+  text-wrap: nowrap;
+  text-decoration: none;
+}
+
+.seminars_navigation a:hover {
+  text-decoration: underline;
+}
+
+.seminars_vector {
+  margin: 0 10px;
+}
+
+.seminars_date {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+  text-wrap: nowrap;
+}
+
+.seminar_wrapper {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+p.paragraph {
+  font-size: 17px;
+  line-height: 29px;
+  color: var(--text-black);
+  margin: 20px 0px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--blue-main);
+}
+
 h1 {
   font-size: 32px;
   font-weight: 500;
   line-height: 46px;
-  color: #242423;
+  color: var(--text-black);
+}
+
+strong {
+  font-weight: 500;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .news_info {
+    width: 80%;
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+    line-height: normal;
+  }
 }

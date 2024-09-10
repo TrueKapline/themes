@@ -6,32 +6,35 @@
         <span class="title_text">Федеральное государственное бюджетное учреждение науки Институт динамики систем и теории управления имени В.М. Матросова Сибирского отделения Российской академии наук</span>
         <img class="title_image" src="<?php echo get_template_directory_uri(); ?>/assets/image/Картинка.png" alt="">
     </div>
-    <div class="slider">
+    <?php
+    echo do_shortcode('[smartslider3 slider="3"]');
+    ?>
+    <!-- <div class="slider">
         <div>
             <img class="slider_image" src="<?php echo get_template_directory_uri(); ?>/assets/image/slider.svg" alt="">
         </div>
-    </div>
+    </div> -->
     <div class="main_menu">
         <div class="submenu">
             <div class="submenu_item" id="about_ins">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="">
-                <p>Об институте</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Info.svg" alt="">
+                <p class="submenu_text">Об институте</p>
             </div>
             <div class="submenu_item" id="scientific_activity">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/Научная деятельность.svg" alt="">
-                <p>Деятельность</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Научная деятельность.svg" alt="">
+                <p class="submenu_text">Научная деятельность</p>
             </div>
             <div class="submenu_item" id="events">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/Мероприятия.svg" alt="">
-                <p>Мероприятия</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Аспирантура.svg" alt="">
+                <p class="submenu_text">Образовательная деятельность</p>
             </div>
             <div class="submenu_item" id="postgraduate_study">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/Аспирантура.svg" alt="">
-                <p>Аспирантура</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Code.svg" alt="">
+                <p class="submenu_text">ИТ-деятельность</p>
             </div>
             <div class="submenu_item" id="certification">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/Сертификация.svg" alt="">
-                <p>Сертификация</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Сертификация.svg" alt="">
+                <p class="submenu_text">Сертификация</p>
             </div>
         </div>
     </div>
@@ -39,8 +42,12 @@
         <div class="title_news">
             <h1>Новости</h1>
             <div class="see_all">
-                <p class="view_all">Посмотреть все</p>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg"" alt="">
+            <?php
+            echo '
+                <a class="view_all" href="' . esc_url(get_permalink(get_page_by_path('vse-novosti')->ID)) . '">Посмотреть все 
+                <img src="' . get_template_directory_uri() . '/assets/image/header-arrow.svg" alt=""></a>
+            ';
+            ?>                   
             </div>
         </div>
         <hr>
@@ -89,8 +96,12 @@
             <div class="title_seminars">
                 <h1>Семинары</h1>
                 <div class="see_all">
-                    <p class="view_all">Календарь</p>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg" alt="">
+                    <?php
+                    echo '
+                        <a class="view_all" href="' . esc_url(get_permalink(get_page_by_path('vse-seminary')->ID)) . '">Календарь
+                        <img src="' . get_template_directory_uri() . '/assets/image/header-arrow.svg" alt=""></a>
+                    ';
+                    ?>                   
                 </div>
             </div>
             <hr>
@@ -148,8 +159,12 @@
         <div class="title_publications">
             <h1>Публикации</h1>
             <div class="see_all">
-                <p class="view_all">Посмотреть все</p>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header-arrow.svg"" alt="">
+                <?php
+                echo '
+                    <a class="view_all" href="' . esc_url(get_permalink(get_page_by_path('vse-publikaczii')->ID)) . '">Посмотреть все 
+                    <img src="' . get_template_directory_uri() . '/assets/image/header-arrow.svg" alt=""></a>
+                ';
+                ?>                   
             </div>
         </div>
         <hr>

@@ -15,45 +15,45 @@
                 <div class="navigation_left-column">
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Главная</p>
+                        <a href="/">Главная</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Об институте</p>
+                        <a>Об институте</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Документы</p>
+                        <a>Документы</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Пресс-центр</p>
+                        <a>Пресс-центр</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Карта сайта</p>
+                        <a>Карта сайта</a>
                     </div>
                 </div>
                 <div class="navigation_right-column">
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Новости</p>
+                        <?php echo '<a href="' . esc_url(get_permalink(get_page_by_path('vse-novosti')->ID)) . '">Новости</a>';?>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Аспирантура</p>
+                        <a>Аспирантура</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Образование</p>
+                        <a>Образование</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Обращения</p>
+                        <a>Обращения</a>
                     </div>
                     <div class="navigation_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/image/footer_arrow_icon.svg" alt="" draggable="false">
-                        <p>Контакты</p>
+                        <a>Контакты</a>
                     </div>
                 </div>
             </div>

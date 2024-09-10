@@ -1,5 +1,5 @@
 const navbarMenu = document.getElementById("menu");
-const burgerMenu = document.getElementById("burger");
+const burgerMenu = document.getElementById("burger").querySelector("input");
 
 burgerMenu.addEventListener("click", () => {
     navbarMenu.classList.toggle("is-active");

@@ -110,6 +110,15 @@ class SidebarMobileMenu {
     });
 
     document
+      .querySelectorAll('#sidr [class*="opl-logout-link"], #sidr [class*="opl-login-li"], #sidr [class*="opl-link"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(
+          /\bsidr-class-.*?\b/g,
+          ""
+        );
+    });
+
+    document
       .querySelectorAll('#sidr [class*="sidr-class-fa"]')
       .forEach((icon) => {
         icon.className = icon.className.replace(/\bsidr-class-fa.*?\b/g, "fa");
@@ -124,11 +133,28 @@ class SidebarMobileMenu {
         );
       });
 
-
     document
       .querySelectorAll('#sidr [class*="sidr-class-dashicons"]')
       .forEach((icon) => {
         icon.className = icon.className.replace(/\bsidr-class-dashicons.*?\b/g, "dashicons");
+      });
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-elusive"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-el-icon.*?\b/g, "el-icon");
+      });
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-genericon"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-genericon.*?\b/g, "genericon");
+      });
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-foundation-icons"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-fi.*?\b/g, "fi");
       });
 
     this.#sidebarToggleMenuBtn = document.querySelector(
@@ -162,16 +188,27 @@ class SidebarMobileMenu {
     //   }
     // });
 
-    document
-    .querySelectorAll('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')
-    .forEach((anchorLink) => {
-      anchorLink.addEventListener("click", this.#onAnchorLinkClick);
+    // Remove comments from the event listeners and add exclusion for popup login link
+    document.body.addEventListener("click", (event) => {
+      const target = event.target;
+
+      if (
+        target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])') &&
+        !target.matches('.opl-login-li a.opl-link')
+      ) {
+        this.#onAnchorLinkClick(event);
+      }
     });
 
-    document
-    .querySelectorAll('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')
-    .forEach((anchorLink) => {
-      anchorLink.addEventListener("touchend", this.#onAnchorLinkClick);
+    document.body.addEventListener("touchend", (event) => {
+      const target = event.target;
+
+      if (
+        target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])') &&
+        !target.matches('.opl-login-li a.opl-link')
+      ) {
+        this.#onAnchorLinkClick(event);
+      }
     });
 
     this.#menuItemsPlusIcon?.forEach((menuItemPlusIcon) => {
@@ -193,6 +230,15 @@ class SidebarMobileMenu {
 
     document.addEventListener("keydown", this.#onDocumentKeydown);
     window.addEventListener("resize", this.#onWindowResize);
+
+    // Add event listener for popup login link
+    document
+     .querySelectorAll(".opl-login-li a.opl-link")
+     .forEach((loginLink) => {
+       loginLink.addEventListener("click", this.#onLoginLinkClick);
+       loginLink.addEventListener("touchend", this.#onLoginLinkClick);
+     });
+
   };
 
   #onHamburgerBtnClick = (event) => {
@@ -298,6 +344,10 @@ class SidebarMobileMenu {
     if (tabKey && navFirstElement === navLastElement) {
       event.preventDefault();
     }
+  };
+
+  #onLoginLinkClick = (event) => {
+    this.closeSidr();
   };
 
   // New method to handle anchor link clicks

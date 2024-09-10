@@ -16,16 +16,24 @@
 <header class="header" id="header">
     <nav class="navbar container">
         <div class="navbar-mobile">
-            <label class="burger" id="burger">
-                <input type="checkbox">
-                <svg viewBox="0 0 32 32">
-                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                    <path class="line" d="M7 16 27 16"></path>
-                </svg>
-            </label>
+            <div class="burger" id="burger">
+                <input
+                    hidden=""
+                    class="check-icon"
+                    id="check-icon"
+                    name="check-icon"
+                    type="checkbox"
+                />
+                <label class="icon-menu" for="check-icon">
+                    <div class="bar bar--1"></div>
+                    <div class="bar bar--2"></div>
+                    <div class="bar bar--3"></div>
+                </label>
+            </div>
         </div>
         <div class="navbar-desktop" id="menu">
             <ul class="menu">
+                <li class="menu-item" onclick="location.href='/'">Главная</li>
                 <li class="menu-item dropdown">
                     <span class="dropdown-toggle menu-link">
                         Институт 
@@ -36,67 +44,184 @@
                             <div class="dropdown-group">
                                 <div class="dropdown-title">
                                     <span class="dropdown-icon">
-                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Info.svg" alt="" draggable="false">
                                     </span>
-                                    <span>Пример</span>
+                                    <span>Об институте</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Ссылка 1</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 2</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 3</a></li>
-                                    <li><a href="#" class="dropdown-link">Какой-то длинный текст со ссылкой</a></li>
+                                    <li><a href="#" class="dropdown-link">История</a></li>
+                                    <li><a href="#" class="dropdown-link">Ученый совет</a></li>
+                                    <li><a href="#" class="dropdown-link">Дирекция</a></li>
+                                    <li><a href="#" class="dropdown-link">Библиотека</a></li>
+                                    <li><a href="#" class="dropdown-link">Новости</a></li>
+                                    <li><a href="#" class="dropdown-link">Сотрудники</a></li>
                                 </ul>
                             </div>
                             <div class="dropdown-group">
                                 <div class="dropdown-title">
                                     <span class="dropdown-icon">
-                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Research.svg" alt="" draggable="false">
                                     </span>
-                                    <span>Пример 2</span>
+                                    <span>Исследования</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Ссылка 1</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 2</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 3</a></li>
-                                    <li><a href="#" class="dropdown-link">Какой-то длинный текст со ссылкой</a></li>
+                                    <li><a href="#" class="dropdown-link">Проекты</a></li>
+                                    <li><a href="#" class="dropdown-link">Важнейшие результаты</a></li>
+                                    <li><a href="#" class="dropdown-link">Годовые отчеты</a></li>
+                                    <li><a href="#" class="dropdown-link">Публикации сотрудников</a></li>
                                 </ul>
                             </div>
                             <div class="dropdown-group">
                                 <div class="dropdown-title">
                                     <span class="dropdown-icon">
-                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Other.svg" alt="" draggable="false">
                                     </span>
-                                    <span>Пример 3</span>
+                                    <span>Прочее</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Ссылка 1</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 2</a></li>
-                                    <li><a href="#" class="dropdown-link">Ссылка 3</a></li>
-                                    <li><a href="#" class="dropdown-link">Какой-то длинный текст со ссылкой</a></li>
+                                    <li><a href="#" class="dropdown-link">Профком</a></li>
+                                    <li><a href="#" class="dropdown-link">Фотоархив</a></li>
+                                    <li><a href="#" class="dropdown-link">Антикоррупционная деятельность</a></li>
+                                    <li><a href="#" class="dropdown-link">Совет научной молодежи</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li class="menu-item">
-                    Научная деятельность
-                    <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
+                <li class="menu-item dropdown">
+                    <span class="dropdown-toggle menu-link">
+                        Деятельность
+                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
+                    </span>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <div class="dropdown-group">
+                                <div class="dropdown-title">
+                                    <span class="dropdown-icon">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Научная деятельность.svg" alt="" draggable="false">
+                                    </span>
+                                    <span>Научная деятельность</span>
+                                </div>
+                                <ul class="dropdown-items">
+                                    <li><a href="#" class="dropdown-link">Проекты</a></li>
+                                    <li><a href="#" class="dropdown-link">Отчеты по проектам</a></li>
+                                    <li><a href="#" class="dropdown-link">Важнейшие результаты</a></li>
+                                    <li><a href="#" class="dropdown-link">Годовые отчеты</a></li>
+                                    <li><a href="#" class="dropdown-link">Деятельность в области ИТ</a></li>
+                                    <li><a href="#" class="dropdown-link">Публикации сотрудников</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-group">
+                                <div class="dropdown-title">
+                                    <span class="dropdown-icon">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Document.svg" alt="" draggable="false">
+                                    </span>
+                                    <span>Издательская деятельность</span>
+                                </div>
+                                <ul class="dropdown-items">
+                                    <li><a href="#" class="dropdown-link">Монографии</a></li>
+                                    <li><a href="#" class="dropdown-link">Сборники научных трудов</a></li>
+                                    <li><a href="#" class="dropdown-link">Учебные пособия</a></li>
+                                    <li><a href="#" class="dropdown-link">Конференции</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-group">
+                                <div class="dropdown-title">
+                                    <span class="dropdown-icon">
+                                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Other.svg" alt="" draggable="false">
+                                    </span>
+                                    <span>Прочее</span>
+                                </div>
+                                <ul class="dropdown-items">
+                                    <li><a href="#" class="dropdown-link">Экспедиции</a></li>
+                                    <li><a href="#" class="dropdown-link">Конкурсы и вакансии</a></li>
+                                    <li><a href="#" class="dropdown-link">Аттестация</a></li>
+                                    <li><a href="#" class="dropdown-link">Сотрудничество</a></li>
+                                    <li><a href="#" class="dropdown-link">Семинары</a></li>
+                                    <li><a href="#" class="dropdown-link">Финансово-хозяйственная деятельность</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="menu-item">
-                    Аспирантура
-                    <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
+                <li class="menu-item dropdown">
+                    <span class="dropdown-toggle menu-link">
+                        Аспирантура
+                        <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
+                    </span>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <div class="dropdown-group">
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Общая информация</span>
+                                    </div>
+                                    <p class="dropdown-desc">Образовательные программы, лицензия, стипендия и другое</p>
+                                </div>
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Целевое обучение</span>
+                                    </div>
+                                    <p class="dropdown-desc">Положения и рекомендации</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-group">
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Аспирантам</span>
+                                    </div>
+                                    <p class="dropdown-desc">Расписание, учебные планы, сессия</p>
+                                </div>
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Поступающим</span>
+                                    </div>
+                                    <p class="dropdown-desc">Правила приема, условия поступления</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-group">
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Полезные ссылки</span>
+                                    </div>
+                                    <p class="dropdown-desc">Необходимые руководства и ресурсы</p>
+                                </div>
+                                <div class="dropdown-block alter-block">
+                                    <div class="dropdown-title alter-title">
+                                        <span class="dropdown-icon">
+                                            <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/Институт.svg" alt="" draggable="false">
+                                        </span>
+                                        <span class="alter-link">Контактные данные</span>
+                                    </div>
+                                    <p class="dropdown-desc">Почта и контактный телефон</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="menu-item">
-                    Документы
-                    <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
-                </li>
-                <li class="menu-item">
-                    Контакты
-                    <img class="menu__item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/image/arrow_icon.svg" alt="" draggable="false">
-                </li>
+                <li class="menu-item">Документы </li>
+                <li class="menu-item">Контакты</li>
             </ul>
         </div>
     </nav>
+    <div class="adapt-btn">
+        <?php echo do_shortcode( '[bvi text=""  ]' ); ?>
+    </div>
 </header>
 
 <!-- <header>

@@ -8,6 +8,9 @@ function idstu_assets() {
     wp_enqueue_script( 'header-script', get_template_directory_uri() . '/assets/js/header.js', array(), date("h:i:s"), true );
     wp_enqueue_style( 'main-css', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime( get_template_directory() . '/assets/css/style.css' ) );
     wp_enqueue_style( 'header-css', get_template_directory_uri() . '/assets/css/header.css', array(), filemtime( get_template_directory() . '/assets/css/header.css' ) );
+
+    // Стили для отдельных страниц
+    wp_enqueue_style('all-news-css', get_template_directory_uri() . '/assets/css/all-news.css', array(), filemtime( get_template_directory() . '/assets/css/all-news.css') );
 }
 add_action( 'wp_enqueue_scripts', 'idstu_assets' );
 
@@ -47,4 +50,16 @@ function get_first_paragraph(){
     $content = substr( $content, 0, strpos( $content, '</p>' ) + 4 );
     $content = strip_tags($content, '<a><strong><em>');
     echo $content;
+}
+
+// Отображение календаря для семинаров
+function get_seminars_by_date($year, $month, $day) {
+    $args = array(
+        'post_type' => 'seminars', // Замените на ваш тип записи
+        'posts_per_page' => -1,
+        'meta_key' => 'seminar_date', // Замените на ваш мета-ключ
+        'meta_value' => $year . '-' . str_pad($month, 2, '0', STR_PAD_LEFT) . '-' . str_pad($day, 2, '0', STR_PAD_LEFT),
+        'meta_compare' => '='
+    );
+    return get_posts($args);
 }

@@ -48,7 +48,7 @@ p.paragraph {
   margin: 20px 0px;
 }
 
-a {
+.paragraph a {
   cursor: pointer;
   text-decoration: underline;
   color: var(--blue-main);

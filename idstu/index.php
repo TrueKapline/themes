@@ -17,8 +17,8 @@
     <div class="main_menu">
         <div class="submenu">
             <div class="submenu_item" id="about_ins">
-                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Info.svg" alt="">
-                <p class="submenu_text">Об институте</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/university.svg" alt="">
+                <p class="submenu_text">Об Институте</p>
             </div>
             <div class="submenu_item" id="scientific_activity">
                 <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Научная деятельность.svg" alt="">
@@ -29,12 +29,12 @@
                 <p class="submenu_text">Образовательная деятельность</p>
             </div>
             <div class="submenu_item" id="postgraduate_study">
-                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Code.svg" alt="">
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/it.svg" alt="">
                 <p class="submenu_text">ИТ-деятельность</p>
             </div>
             <div class="submenu_item" id="certification">
-                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/Сертификация.svg" alt="">
-                <p class="submenu_text">Сертификация</p>
+                <img class="submenu_img" src="<?php echo get_template_directory_uri(); ?>/assets/image/anti-corruption.svg" alt="">
+                <p class="submenu_text">Антикоррупционная деятельность</p>
             </div>
         </div>
     </div>

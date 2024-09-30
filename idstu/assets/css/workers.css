@@ -1,0 +1,69 @@
+.workers_wrapper {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.workers_image {
+  width: 255px;
+  height: 340px;
+  margin-bottom: 10px;
+}
+
+.workers_name {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.workers_degree {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.workers_position {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--blue-main);
+}
+
+.workers_laboratory {
+  margin-bottom: 10px;
+}
+
+hr {
+  margin-bottom: 10px;
+}
+
+.workers_profiles_info {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.workers_profiles {
+  list-style-position: inside;
+}
+
+.workers_profile {
+  margin-bottom: 5px;
+}
+
+.workers_profile::marker {
+  color: var(--blue-main);
+}
+
+p.paragraph {
+  font-size: 17px;
+  line-height: 29px;
+  color: var(--text-black);
+  margin: 20px 0px;
+  text-align: justify;
+}
+

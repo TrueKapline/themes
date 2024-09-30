@@ -98,6 +98,21 @@ header {
     user-select: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.wrapper-link {
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 0.8rem;
+    padding-inline: 0.5rem;
+    color: var(--text-black);
+    transition: color 0.3s ease;
+}
+
 .menu-item {
     color: var(--text-black);
     font-weight: 500;
@@ -213,7 +228,7 @@ img.menu__item-icon {
         height: 100%;
     }
 
-    .menu-item {
+    li.menu-item {
         display: flex;
         cursor: pointer;
         padding-inline: 1rem;

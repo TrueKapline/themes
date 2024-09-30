@@ -1,8 +1,5 @@
 <?php
-/**
- * Template Name: Семинары
- * Template Post Category: seminars
- */
+/* Template Name: Совет научной молодежи */
 
 get_header(); ?>
 
@@ -11,18 +8,13 @@ get_header(); ?>
         <nav class="page_navigation">
             <a onclick="location.href='/'">Главная</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="navigation_vector" alt="Стрелка">
-            <a onclick="">Деятельность</a>
+            <a onclick="">Прочее</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="navigation_vector" alt="Стрелка">
-            <?php echo '<a href="' . esc_url(get_permalink(get_page_by_path('vse-seminary')->ID)) . '">Семинары</a>';?>
+            <a onclick="">Совет научной молодежи</a>
         </nav>
     </div>
-    <div class="seminar_wrapper">
-        <?php
-        the_title( '<h1>', '</h1>' );
 
-        the_content();
-        ?>
-    </div>
+    <?php the_content(); ?>
 </main>
 
 <?php get_footer(); ?>

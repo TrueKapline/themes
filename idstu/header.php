@@ -33,7 +33,7 @@
         </div>
         <div class="navbar-desktop" id="menu">
             <ul class="menu">
-                <li class="menu-item" onclick="location.href='/'">Главная</li>
+                <a class="wrapper-link" href="/"><li class="menu-item">Главная</li></a>
                 <li class="menu-item dropdown">
                     <span class="dropdown-toggle menu-link">
                         Институт 
@@ -49,12 +49,12 @@
                                     <span>Об институте</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">История</a></li>
-                                    <li><a href="#" class="dropdown-link">Ученый совет</a></li>
-                                    <li><a href="#" class="dropdown-link">Дирекция</a></li>
-                                    <li><a href="#" class="dropdown-link">Библиотека</a></li>
-                                    <li><a href="#" class="dropdown-link">Новости</a></li>
-                                    <li><a href="#" class="dropdown-link">Сотрудники</a></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('istoriya')->ID)) . '">История</a>';?>></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('uchenyj-sovet')->ID)) . '">Ученый совет</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('direkcziya')->ID)) . '">Дирекция</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('biblioteka')->ID)) . '">Библиотека</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('vse-novosti')->ID)) . '">Новости</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('vse-sotrudniki')->ID)) . '">Сотрудники</a>';?></li>
                                 </ul>
                             </div>
                             <div class="dropdown-group">
@@ -65,10 +65,10 @@
                                     <span>Исследования</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Проекты</a></li>
-                                    <li><a href="#" class="dropdown-link">Важнейшие результаты</a></li>
-                                    <li><a href="#" class="dropdown-link">Годовые отчеты</a></li>
-                                    <li><a href="#" class="dropdown-link">Публикации сотрудников</a></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('proekty')->ID)) . '">Проекты</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('vazhnejshie-rezultaty')->ID)) . '">Важнейшие результаты</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('godovye-otchety')->ID)) . '">Годовые отчеты</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('vse-publikaczii')->ID)) . '">Публикации сотрудников</a>';?></li>
                                 </ul>
                             </div>
                             <div class="dropdown-group">
@@ -79,10 +79,10 @@
                                     <span>Прочее</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Профком</a></li>
-                                    <li><a href="#" class="dropdown-link">Фотоархив</a></li>
-                                    <li><a href="#" class="dropdown-link">Антикоррупционная деятельность</a></li>
-                                    <li><a href="#" class="dropdown-link">Совет научной молодежи</a></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('profkom')->ID)) . '">Профком</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('fotoarhiv')->ID)) . '">Фотоархив</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('antikorrupczionnaya-deyatelnost')->ID)) . '">Антикоррупционная деятельность</a>';?></li>
+                                    <li><?php echo '<a class="dropdown-link" href="' . esc_url(get_permalink(get_page_by_path('sovet-nauchnoj-molodezhi')->ID)) . '">Совет научной молодежи</a>';?></li>
                                 </ul>
                             </div>
                         </div>
@@ -103,7 +103,6 @@
                                     <span>Научная деятельность</span>
                                 </div>
                                 <ul class="dropdown-items">
-                                    <li><a href="#" class="dropdown-link">Проекты</a></li>
                                     <li><a href="#" class="dropdown-link">Отчеты по проектам</a></li>
                                     <li><a href="#" class="dropdown-link">Важнейшие результаты</a></li>
                                     <li><a href="#" class="dropdown-link">Годовые отчеты</a></li>
@@ -214,8 +213,8 @@
                         </div>
                     </div>
                 </li>
-                <li class="menu-item">Документы </li>
-                <li class="menu-item">Контакты</li>
+                <li class="menu-item menu-link">Документы</li>
+                <li class="menu-item menu-link">Контакты</li>
             </ul>
         </div>
     </nav>

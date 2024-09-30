@@ -37,7 +37,12 @@ a {
     color: var(--blue-main);
 }
 
-a:hover {
+.page-link {
+    text-decoration: none;
+    color: var(--blue-main);
+}
+
+.page-link:hover {
     text-decoration: underline;
 }
 

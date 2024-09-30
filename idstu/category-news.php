@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="news_navigation">
             <a onclick="location.href='/'">Главная</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="news_vector" alt="Стрелка">
-            <a>Научная деятельность</a>
+            <a>Об институте</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="news_vector" alt="Стрелка">
             <?php echo '<a href="' . esc_url(get_permalink(get_page_by_path('vse-novosti')->ID)) . '">Новости</a>';?>
         </div>

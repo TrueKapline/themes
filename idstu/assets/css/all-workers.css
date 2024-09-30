@@ -1,0 +1,35 @@
+.workers_page_wrapper {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    justify-content: space-between;
+}
+
+.workers_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.workers_photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.workers_title {
+    font-size: 18px;
+    text-align: center;
+    max-width: 250px;
+}
+
+.workers_link {
+    color: var(--text-black);
+}

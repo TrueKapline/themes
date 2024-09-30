@@ -1,8 +1,5 @@
 <?php
-/**
- * Template Name: Семинары
- * Template Post Category: seminars
- */
+/* Template Name: Отчеты по проектам */
 
 get_header(); ?>
 
@@ -13,16 +10,11 @@ get_header(); ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="navigation_vector" alt="Стрелка">
             <a onclick="">Деятельность</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/vector.svg" class="navigation_vector" alt="Стрелка">
-            <?php echo '<a href="' . esc_url(get_permalink(get_page_by_path('vse-seminary')->ID)) . '">Семинары</a>';?>
+            <a onclick="">Отчеты по проектам</a>
         </nav>
     </div>
-    <div class="seminar_wrapper">
-        <?php
-        the_title( '<h1>', '</h1>' );
 
-        the_content();
-        ?>
-    </div>
+    <?php the_content(); ?>
 </main>
 
 <?php get_footer(); ?>

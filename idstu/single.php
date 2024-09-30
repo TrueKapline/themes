@@ -15,6 +15,9 @@ if ( !empty($categories) && $categories[0]->slug == 'news' ) {
 } else if ( !empty($categories) && $categories[0]->slug == 'seminars' ) {
     // Загружаем шаблон для рубрики "news"
     get_template_part( 'category', 'seminars' );
+} else if ( !empty($categories) && $categories[0]->slug == 'workers' ) {
+    // Загружаем шаблон для рубрики "news"
+    get_template_part( 'category', 'workers' );
 } else {
     // Загружаем общий шаблон рубрик
     get_template_part( 'category', get_post_type() );

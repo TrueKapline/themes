@@ -11,6 +11,7 @@ function idstu_assets() {
 
     // Стили для отдельных страниц
     wp_enqueue_style('all-news-css', get_template_directory_uri() . '/assets/css/all-news.css', array(), filemtime( get_template_directory() . '/assets/css/all-news.css') );
+    wp_enqueue_style('all-workers-css', get_template_directory_uri() . '/assets/css/all-workers.css', array(), filemtime( get_template_directory() . '/assets/css/all-workers.css') );
 }
 add_action( 'wp_enqueue_scripts', 'idstu_assets' );
 
@@ -26,6 +27,9 @@ function idstu_single_assets() {
             } elseif ( $categories[0]->slug == 'seminars' ) {
                 // Загружаем стиль seminars.css для категории "seminars"
                 wp_enqueue_style( 'seminars-css', get_template_directory_uri() . '/assets/css/seminars.css', array(), filemtime( get_template_directory() . '/assets/css/seminars.css' ) );
+            } elseif ( $categories[0]->slug == 'workers' ) {
+                // Загружаем стиль seminars.css для категории "seminars"
+                wp_enqueue_style( 'workers-css', get_template_directory_uri() . '/assets/css/workers.css', array(), filemtime( get_template_directory() . '/assets/css/workers.css' ) );
             }
         }
     }

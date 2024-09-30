@@ -47,12 +47,6 @@ p.paragraph {
   margin: 20px 0px;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--blue-main);
-}
-
 h1 {
   font-size: 32px;
   font-weight: 500;
